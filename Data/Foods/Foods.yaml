@@ -1,0 +1,7 @@
+Foods:
+  apple:
+    name: "Apple"
+    ability:
+      type: "buy"
+      impact: randomfriendly stats
+      scaling: [(1, 1)]

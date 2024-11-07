@@ -1,0 +1,9 @@
+lvl1Pets:
+  pig:
+    name: "Pig"
+    attack: 4
+    health: 1
+    ability:
+      trigger: "sell"
+      impact: gain x gold
+      scaling: [1, 2, 3]
