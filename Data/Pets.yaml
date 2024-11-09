@@ -1,0 +1,17 @@
+Pets:
+  empty:
+    name: Empty
+    attack: 0
+    health: 0
+    ability:
+      trigger: None
+      impact: None
+      scaling: []
+  pig:
+    name: Pig
+    attack: 4
+    health: 1
+    ability:
+      trigger: sell
+      impact: gain x gold
+      scaling: [1, 2, 3]

@@ -1,0 +1,13 @@
+Foods:
+  empty:
+    name: Empty
+    ability:
+      type: None
+      impact: None
+      scaling: []
+  apple:
+    name: Apple
+    ability:
+      type: buy
+      impact: randomfriendly stats
+      scaling: [(1, 1)]
