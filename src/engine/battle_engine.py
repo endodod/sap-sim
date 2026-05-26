@@ -17,6 +17,11 @@ class BattleResult:
     enemy_survivors: int
     log: list[str]
 
+    @property
+    def training_label(self) -> str:
+        """Returns "win" or "loss". Draw is treated as a loss for training."""
+        return "win" if self.winner == "player" else "loss"
+
 
 class BattleEngine:
     MAX_TURNS = 50

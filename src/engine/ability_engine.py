@@ -538,7 +538,24 @@ class AbilityEngine:
             return []
 
         def _add_milk_to_shop(eng, event, player, enemy, log):
-            # Cow: handled in shop_phase via game_state
+            shop = event.data.get("shop")
+            if shop is None or eng.game_data is None:
+                return []
+            milk = eng.game_data.make_food("milk")
+            target_slot = None
+            for slot in shop.food_slots:
+                if slot.is_empty():
+                    target_slot = slot
+                    break
+            if target_slot is None:
+                for slot in shop.food_slots:
+                    if not slot.frozen:
+                        target_slot = slot
+                        break
+            if target_slot is None:
+                return []
+            target_slot.item = milk
+            log.append(f"  {event.source.name} added Milk to shop")
             return []
 
         def _gain_gold(eng, event, player, enemy, log):
