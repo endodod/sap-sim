@@ -1,4 +1,4 @@
-# SuperAutoPetsSimulation
+# sap-sim
 
 Python simulation of Super Auto Pets — playable via terminal and designed as a base for AI training.
 
