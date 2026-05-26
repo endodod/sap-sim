@@ -39,15 +39,9 @@ loop on top of this codebase.
 
 ---
 
-## Known gaps (not implemented)
+## Known gaps
 
-| # | What | Where | Status |
-|---|------|--------|--------|
-| 1 | `end_of_turn` events never fire | No call site in shop phase | **Fixed** — `game_state.end_turn()` fires `_fire_end_of_turn_events()`; AI loop calls `_fire_end_of_turn()` before battle |
-| 2 | `buy` / `friend_summoned` events not fired in AI games | `ai_simulator.py` | **Fixed** — `_fire_buy_events()` fires after every `shop.buy_pet()` success |
-| 3 | Cow "add Milk to shop" stub | `ability_engine.py` | **Fixed** — handler places a real Milk food item in the first empty food slot |
-| 4 | Draw outcome for training labels | `battle_engine.py` returns `"draw"` | **Fixed** — `BattleResult.training_label` maps draw → `"loss"` |
-| 5 | No interest mechanic | — | Pack-1 does not have this; low priority |
+All known gaps from pre-1.0 development were resolved in Phase 1.
 
 ---
 
@@ -81,7 +75,7 @@ src/
     shop.py                  shop state, buy/sell/food/freeze/reroll
   game/
     game_state.py            player game state, round/gold/lives management
-    ai_simulator.py          enemy pool generation  ← known gaps above
+    ai_simulator.py          enemy pool generation
     data_loader.py           YAML → GameData
   models/
     pet.py / team.py         core data structures
