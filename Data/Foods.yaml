@@ -1,13 +1,124 @@
-Foods:
-  empty:
-    name: Empty
-    ability:
-      type: None
-      impact: None
-      scaling: []
-  apple:
-    name: Apple
-    ability:
-      type: buy
-      impact: randomfriendly stats
-      scaling: [(1, 1)]
+# Super Auto Pets - Pack 1 Foods
+# Source: https://www.groundedsap.co.uk/
+# scaling: [[atk, hp]] (foods don't level, single entry)
+
+# ─── TIER 1 ──────────────────────────────────────────────────────────────────
+
+apple:
+  tier: 1
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_stats
+    target: chosen_friend
+    scaling: [[1, 1]]
+
+salad_bowl:
+  tier: 1
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_two_random_friends_stats
+    target: two_random_friends
+    scaling: [[1, 1]]
+
+# ─── TIER 2 ──────────────────────────────────────────────────────────────────
+
+cupcake:
+  tier: 2
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_temp_stats
+    target: chosen_friend
+    scaling: [[3, 3]]
+
+meat_bone:
+  tier: 2
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_perk
+    target: chosen_friend
+    perk: bone_attack
+    scaling: [[0, 0]]
+
+# ─── TIER 3 ──────────────────────────────────────────────────────────────────
+
+sushi:
+  tier: 3
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_three_random_friends_stats
+    target: three_random_friends
+    scaling: [[1, 1]]
+
+pill:
+  tier: 3
+  cost: 1
+  ability:
+    trigger: buy
+    effect: faint_target
+    target: chosen_friend
+    scaling: [[0, 0]]
+
+# ─── TIER 4 ──────────────────────────────────────────────────────────────────
+
+pizza:
+  tier: 4
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_two_random_friends_stats
+    target: two_random_friends
+    scaling: [[2, 2]]
+
+pear:
+  tier: 4
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_stats
+    target: chosen_friend
+    scaling: [[2, 2]]
+
+# ─── TIER 5 ──────────────────────────────────────────────────────────────────
+
+canned_food:
+  tier: 5
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_all_future_shop_pets_stats
+    target: shop_permanent
+    scaling: [[1, 1]]
+
+milk:
+  tier: 5
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_temp_stats
+    target: chosen_friend
+    scaling: [[2, 1]]
+
+# ─── TIER 6 ──────────────────────────────────────────────────────────────────
+
+fortune_cookie:
+  tier: 6
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_random_perk
+    target: chosen_friend
+    scaling: [[0, 0]]
+
+cheese:
+  tier: 6
+  cost: 3
+  ability:
+    trigger: buy
+    effect: give_target_stats
+    target: chosen_friend
+    scaling: [[3, 3]]

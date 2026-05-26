@@ -1,17 +1,485 @@
-Pets:
-  empty:
-    name: Empty
-    attack: 0
-    health: 0
-    ability:
-      trigger: None
-      impact: None
-      scaling: []
-  pig:
-    name: Pig
-    attack: 4
-    health: 1
-    ability:
-      trigger: sell
-      impact: gain x gold
-      scaling: [1, 2, 3]
+# Super Auto Pets - Pack 1 (Turtle Pack)
+# Source: https://www.groundedsap.co.uk/
+# scaling: [[atk, hp], [atk, hp], [atk, hp]] for level 1/2/3
+
+# ─── TIER 1 ───────────────────────────────────────────────────────────────────
+
+ant:
+  attack: 1
+  health: 1
+  tier: 1
+  ability:
+    trigger: friend_faints
+    effect: give_random_friend_stats
+    target: random_friend
+    scaling: [[2, 1], [4, 2], [6, 3]]
+
+beaver:
+  attack: 2
+  health: 3
+  tier: 1
+  ability:
+    trigger: sell
+    effect: give_two_friends_health
+    target: two_random_friends
+    scaling: [[0, 1], [0, 2], [0, 3]]
+
+cricket:
+  attack: 1
+  health: 2
+  tier: 1
+  ability:
+    trigger: faint
+    effect: summon_token
+    target: self
+    token: cricket_bug
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+duck:
+  attack: 1
+  health: 3
+  tier: 1
+  ability:
+    trigger: sell
+    effect: give_all_shop_pets_health
+    target: all_shop_pets
+    scaling: [[0, 1], [0, 2], [0, 3]]
+
+fish:
+  attack: 2
+  health: 3
+  tier: 1
+  ability:
+    trigger: level_up
+    effect: give_all_friends_stats
+    target: all_friends
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+horse:
+  attack: 2
+  health: 1
+  tier: 1
+  ability:
+    trigger: friend_summoned
+    effect: give_friend_temp_attack
+    target: summoned_friend
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+mosquito:
+  attack: 2
+  health: 2
+  tier: 1
+  ability:
+    trigger: start_of_battle
+    effect: deal_damage_random_enemy
+    target: random_enemy
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+otter:
+  attack: 1
+  health: 2
+  tier: 1
+  ability:
+    trigger: buy
+    effect: give_random_friend_stats
+    target: random_friend
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+pig:
+  attack: 3
+  health: 1
+  tier: 1
+  ability:
+    trigger: sell
+    effect: gain_gold
+    target: self
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+sloth:
+  attack: 1
+  health: 1
+  tier: 1
+  secret: true
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+# ─── TIER 2 ───────────────────────────────────────────────────────────────────
+
+crab:
+  attack: 3
+  health: 3
+  tier: 2
+  ability:
+    trigger: start_of_battle
+    effect: copy_health_of_healthiest_friend
+    target: self
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+dodo:
+  attack: 2
+  health: 3
+  tier: 2
+  ability:
+    trigger: start_of_battle
+    effect: give_attack_to_friend_ahead
+    target: friend_ahead
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+flamingo:
+  attack: 3
+  health: 1
+  tier: 2
+  ability:
+    trigger: faint
+    effect: give_two_friends_behind_stats
+    target: two_friends_behind
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+hedgehog:
+  attack: 3
+  health: 2
+  tier: 2
+  ability:
+    trigger: faint
+    effect: deal_damage_all_pets
+    target: all_pets
+    scaling: [[1, 0], [1, 0], [1, 0]]
+
+peacock:
+  attack: 1
+  health: 5
+  tier: 2
+  ability:
+    trigger: hurt
+    effect: gain_attack
+    target: self
+    scaling: [[2, 0], [4, 0], [6, 0]]
+
+rat:
+  attack: 3
+  health: 5
+  tier: 2
+  ability:
+    trigger: faint
+    effect: summon_enemy_token
+    target: enemy_front
+    token: dirty_rat
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+shrimp:
+  attack: 2
+  health: 3
+  tier: 2
+  ability:
+    trigger: friend_sold
+    effect: give_random_friend_attack
+    target: random_friend
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+spider:
+  attack: 2
+  health: 2
+  tier: 2
+  ability:
+    trigger: faint
+    effect: summon_random_tier3_pet
+    target: self
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+swan:
+  attack: 1
+  health: 3
+  tier: 2
+  ability:
+    trigger: start_of_turn
+    effect: gain_gold
+    target: self
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+turtle:
+  attack: 1
+  health: 2
+  tier: 2
+  ability:
+    trigger: faint
+    effect: give_pets_behind_perk
+    target: friends_behind
+    perk: melon_armor
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+# ─── TIER 3 ───────────────────────────────────────────────────────────────────
+
+badger:
+  attack: 5
+  health: 4
+  tier: 3
+  ability:
+    trigger: faint
+    effect: deal_splash_damage_adjacent
+    target: adjacent_pets
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+blowfish:
+  attack: 3
+  health: 6
+  tier: 3
+  ability:
+    trigger: hurt
+    effect: deal_damage_random_enemy
+    target: random_enemy
+    scaling: [[3, 0], [6, 0], [9, 0]]
+
+camel:
+  attack: 2
+  health: 5
+  tier: 3
+  ability:
+    trigger: hurt
+    effect: give_friend_behind_stats
+    target: friend_behind
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+dog:
+  attack: 2
+  health: 2
+  tier: 3
+  ability:
+    trigger: friend_summoned
+    effect: gain_random_stat
+    target: self
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+giraffe:
+  attack: 2
+  health: 5
+  tier: 3
+  ability:
+    trigger: end_of_turn
+    effect: give_friends_ahead_stats
+    target: three_friends_ahead
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+kangaroo:
+  attack: 1
+  health: 2
+  tier: 3
+  ability:
+    trigger: friend_ahead_attacks
+    effect: gain_stats
+    target: self
+    scaling: [[2, 2], [4, 4], [6, 6]]
+
+ox:
+  attack: 1
+  health: 4
+  tier: 3
+  ability:
+    trigger: friend_ahead_faints
+    effect: gain_attack_and_perk
+    target: self
+    perk: bone_attack
+    scaling: [[1, 0], [2, 0], [3, 0]]
+
+rabbit:
+  attack: 1
+  health: 3
+  tier: 3
+  ability:
+    trigger: friend_eats_food
+    effect: give_friend_health
+    target: friend_who_ate
+    scaling: [[0, 1], [0, 2], [0, 3]]
+
+sheep:
+  attack: 2
+  health: 2
+  tier: 3
+  ability:
+    trigger: faint
+    effect: summon_two_tokens
+    target: self
+    token: ram
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+whale:
+  attack: 2
+  health: 6
+  tier: 3
+  ability:
+    trigger: start_of_battle
+    effect: swallow_friend_ahead
+    target: friend_ahead
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+# ─── TIER 4 ───────────────────────────────────────────────────────────────────
+
+bison:
+  attack: 3
+  health: 3
+  tier: 4
+  ability:
+    trigger: end_of_turn
+    effect: gain_stats_if_all_friends_max_level
+    target: self
+    scaling: [[2, 2], [4, 4], [6, 6]]
+
+deer:
+  attack: 1
+  health: 1
+  tier: 4
+  ability:
+    trigger: faint
+    effect: summon_token
+    target: self
+    token: bus
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+hippo:
+  attack: 4
+  health: 7
+  tier: 4
+  ability:
+    trigger: knock_out
+    effect: gain_stats
+    target: self
+    scaling: [[2, 2], [4, 4], [6, 6]]
+
+monkey:
+  attack: 1
+  health: 2
+  tier: 4
+  ability:
+    trigger: end_of_turn
+    effect: give_friend_ahead_stats
+    target: friend_ahead
+    scaling: [[3, 3], [6, 6], [9, 9]]
+
+penguin:
+  attack: 1
+  health: 2
+  tier: 4
+  ability:
+    trigger: end_of_turn
+    effect: give_levelled_friends_stats
+    target: levelled_friends
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+# ─── TIER 5 ───────────────────────────────────────────────────────────────────
+
+cow:
+  attack: 4
+  health: 6
+  tier: 5
+  ability:
+    trigger: buy
+    effect: add_milk_to_shop
+    target: shop
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+crocodile:
+  attack: 8
+  health: 4
+  tier: 5
+  ability:
+    trigger: start_of_battle
+    effect: deal_damage_last_enemy
+    target: last_enemy
+    scaling: [[8, 0], [16, 0], [24, 0]]
+
+eagle:
+  attack: 6
+  health: 5
+  tier: 5
+  ability:
+    trigger: faint
+    effect: summon_random_tier6_pet
+    target: self
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+scorpion:
+  attack: 1
+  health: 1
+  tier: 5
+  ability:
+    trigger: summoned
+    effect: gain_perk
+    target: self
+    perk: poisoned_attack
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+shark:
+  attack: 4
+  health: 4
+  tier: 5
+  ability:
+    trigger: friend_faints
+    effect: gain_stats
+    target: self
+    scaling: [[2, 1], [4, 2], [6, 3]]
+
+# ─── TIER 6 ───────────────────────────────────────────────────────────────────
+
+boar:
+  attack: 8
+  health: 6
+  tier: 6
+  ability:
+    trigger: before_attack
+    effect: gain_attack
+    target: self
+    scaling: [[2, 0], [4, 0], [6, 0]]
+
+cat:
+  attack: 4
+  health: 5
+  tier: 6
+  ability:
+    trigger: friend_eats_food
+    effect: multiply_food_buff
+    target: food_target
+    scaling: [[2, 0], [3, 0], [4, 0]]
+
+dragon:
+  attack: 6
+  health: 8
+  tier: 6
+  ability:
+    trigger: friend_gains_xp
+    effect: give_all_friends_stats
+    target: all_friends
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+fly:
+  attack: 5
+  health: 5
+  tier: 6
+  ability:
+    trigger: friend_faints
+    effect: summon_zombie_fly_on_third
+    target: self
+    token: zombie_fly
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+gorilla:
+  attack: 6
+  health: 9
+  tier: 6
+  ability:
+    trigger: hurt
+    effect: gain_perk_once_per_round
+    target: self
+    perk: coconut_shield
+    scaling: [[0, 0], [0, 0], [0, 0]]
+
+leopard:
+  attack: 10
+  health: 4
+  tier: 6
+  ability:
+    trigger: start_of_battle
+    effect: deal_percent_damage_random_enemy
+    target: random_enemy
+    scaling: [[50, 0], [50, 0], [50, 0]]

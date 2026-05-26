@@ -1,0 +1,58 @@
+# Token pets — spawned by abilities, never appear in shop
+# scaling: [[atk, hp]] per level of summoning pet (index = level-1)
+
+cricket_bug:
+  attack: 1
+  health: 1
+  tier: 0
+  is_token: true
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[1, 1], [2, 2], [3, 3]]
+
+dirty_rat:
+  attack: 1
+  health: 1
+  tier: 0
+  is_token: true
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[1, 1], [1, 1], [1, 1]]
+
+ram:
+  attack: 2
+  health: 2
+  tier: 0
+  is_token: true
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[2, 2], [4, 4], [6, 6]]
+
+zombie_fly:
+  attack: 5
+  health: 5
+  tier: 0
+  is_token: true
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[5, 5], [5, 5], [5, 5]]
+
+bus:
+  attack: 5
+  health: 5
+  tier: 0
+  is_token: true
+  perk: chili
+  ability:
+    trigger: none
+    effect: none
+    target: none
+    scaling: [[5, 5], [5, 5], [5, 5]]
