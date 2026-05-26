@@ -1,6 +1,6 @@
 # SuperAutoPetsSimulation
 
-Python simulation of Super Auto Pets (Pack 1 / Turtle Pack) — playable via terminal and designed as a base for AI training.
+Python simulation of Super Auto Pets — playable via terminal and designed as a base for AI training.
 
 ## Run
 
